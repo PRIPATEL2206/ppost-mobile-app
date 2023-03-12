@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
               DraggableScrollableSheet(
                 initialChildSize: .3,
                 minChildSize: .2,
-                maxChildSize: .5,
+                maxChildSize: .7,
                 builder: (context, scrollController) {
                   return Container(
                     color: Colors.white,
@@ -180,12 +180,28 @@ class _HomePageState extends State<HomePage> {
                           thickness: .5,
                           color: Colors.black,
                         ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 1),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 3, vertical: 8),
+                          color: Colors.teal,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                AppText(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                    text:
+                                        "status code: ${_webControler.responseStatusCode} ")
+                              ]),
+                        ),
                         Expanded(
                           child: SingleChildScrollView(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 10),
                             controller: scrollController,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 10),
+                            child: Container(
+                              alignment: Alignment.topLeft,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
